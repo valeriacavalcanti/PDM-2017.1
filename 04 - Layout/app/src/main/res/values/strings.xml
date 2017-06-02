@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Layout</string>
+
+    <string name="btn_ok">Ok</string>
+    <string name="btn_cancela">Cancela</string>
+
+</resources>

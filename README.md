@@ -14,3 +14,4 @@
 04 | 02/06/2017 | Layout | Layout e distribuição de Componentes na tela
 05 | 03/06/2017 | Janela | Ciclo de Vida da View
 06 | 03/06/2017 | Coisas | Intent e Serviços Android
+07 | 05/06/2017 | Milho| Activity, Intent e Layout

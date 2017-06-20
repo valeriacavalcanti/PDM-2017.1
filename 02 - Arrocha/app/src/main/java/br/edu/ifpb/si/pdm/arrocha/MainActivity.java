@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tvMenor, tvMaior;
@@ -34,14 +35,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void atualizaInterface(){
+        this.etChute.setText("");
         this.tvMenor.setText(Integer.toString(this.jogo.getMenor()));
         this.tvMaior.setText(Integer.toString(this.jogo.getMaior()));
+        Log.i("FOFO", MainActivity.this.jogo.toString());
     }
 
     private class BotaoListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-            Log.i("FOFO", MainActivity.this.jogo.toString());
+
+            int chute = Integer.parseInt(MainActivity.this.etChute.getText().toString());
+            try{
+                MainActivity.this.jogo.jogar(chute);
+            }catch(RuntimeException re){
+                MainActivity.this.jogo = new Arrocha();
+                Toast.makeText(MainActivity.this, re.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+            MainActivity.this.atualizaInterface();
         }
     }
 }

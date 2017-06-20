@@ -38,6 +38,19 @@ public class Arrocha {
     }
 
     public void jogar(int chute){
+        if (!this.validar(chute))
+            throw new RuntimeException("Chute inválido!");
+
+        if (chute == this.getSecreto())
+            throw new RuntimeException("Acertou!");
+
+        if (chute < this.getSecreto())
+            menor = chute;
+        else if (chute > this.getSecreto())
+            maior = chute;
+
+        if (this.isArrochado())
+            throw new RuntimeException("Número arrochado!");
 
     }
 

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         this.btFilha.setOnClickListener(new BotaoClickListener());
 
         this.image = (ImageView) findViewById(R.id.ivImagem);
-        this.image.setBackgroundResource(R.drawable.ifpb);
+        //this.image.setBackgroundResource(R.drawable.ifpb);
     }
 
     private class BotaoClickListener implements View.OnClickListener{

@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.StringTokenizer;
 
 public class MainActivity extends AppCompatActivity {
     private TextView texto;
@@ -34,8 +35,16 @@ public class MainActivity extends AppCompatActivity {
     private class BotaoListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
-            MainActivity.this.texto.setText("Rafael");
+            //MainActivity.this.texto.setText("Rafael");
             Calendar c = Calendar.getInstance();
+            String data = String.format("%02d/%02d/%d", c.get(Calendar.DAY_OF_MONTH),
+                                                    c.get(Calendar.MONTH) + 1,
+                                                    c.get(Calendar.YEAR));
+            String hora = String.format("%02d:%02d:%02d h", c.get(Calendar.HOUR_OF_DAY),
+                                                      c.get(Calendar.MINUTE),
+                                                      c.get(Calendar.SECOND));
+            String dataHora = String.format("%s - %s", data, hora);
+            MainActivity.this.texto.setText(dataHora);
         }
     }
 

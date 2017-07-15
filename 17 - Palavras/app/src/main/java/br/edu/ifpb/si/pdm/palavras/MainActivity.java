@@ -15,6 +15,20 @@ import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
+/**
+ * PalavraDAO
+ * - Implementar: get(posicao), size
+ * - Implementar: excluir, alterar
+ *
+ * MainActivity
+ * - Listar as palavras no ListView
+ * - Add funcionalidades:
+ *      onclick: editar
+ *      onlongclick: excluir
+ *
+ *  Para: Segunda (17/07/2017)
+ * */
+
 public class MainActivity extends AppCompatActivity {
     private EditText etPalavra;
     private ListView listView;

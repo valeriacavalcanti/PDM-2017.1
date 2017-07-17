@@ -23,3 +23,4 @@
 13 | 07/07/2017 | Monitorador | BroadcastReceiver
 14 | 10/07/2017 | Monitorador | BroadcastReceiver - Dinâmico
 15 | 15/07/2017 | Palavra | Banco de Dados - Versão 1.0
+16 | 17/07/2017 | Palavra | Banco de Dados - Versão 2.0

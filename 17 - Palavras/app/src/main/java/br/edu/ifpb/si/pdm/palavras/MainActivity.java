@@ -11,17 +11,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
 /**
- * PalavraDAO
- * - Implementar: get(posicao), size
- * - Implementar: excluir, alterar
- *
  * MainActivity
- * - Listar as palavras no ListView
  * - Add funcionalidades:
  *      onclick: editar
  *      onlongclick: excluir
@@ -49,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         this.listView = (ListView) findViewById(R.id.listView);
         PalavraAdapter adapter = new PalavraAdapter(this, this.dao);
         this.listView.setAdapter(adapter);
+
+        this.listView.setOnItemClickListener(new ClickItemLista());
+        this.listView.setOnItemLongClickListener(new ClickLongItemLista());
     }
 
     private void atualizaLista(){
@@ -86,21 +85,67 @@ public class MainActivity extends AppCompatActivity {
             builder.setTitle("Nova Palavra");
             builder.setMessage("Informe a nova palavra");
             builder.setIcon(R.mipmap.ic_launcher);
-            builder.setPositiveButton("Ok", new ClickBotaoJanela());
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Log.i("APP_PALAVRAS", MainActivity.this.etPalavra.getText().toString());
+                    Palavra p = new Palavra(MainActivity.this.etPalavra.getText().toString());
+                    MainActivity.this.dao.insert(p);
+                    Log.i("APP_PALAVRAS", MainActivity.this.dao.get().toString());
+                    MainActivity.this.atualizaLista();
+                }
+            });
             builder.setNegativeButton("Cancelar", null);
             builder.setView(MainActivity.this.etPalavra);
             builder.create().show();
         }
     }
 
-    private class ClickBotaoJanela implements DialogInterface.OnClickListener{
+    private class ClickItemLista implements AdapterView.OnItemClickListener{
         @Override
-        public void onClick(DialogInterface dialog, int which) {
-            Log.i("APP_PALAVRAS", MainActivity.this.etPalavra.getText().toString());
-            Palavra p = new Palavra(MainActivity.this.etPalavra.getText().toString());
-            MainActivity.this.dao.insert(p);
-            Log.i("APP_PALAVRA", MainActivity.this.dao.get().toString());
-            MainActivity.this.atualizaLista();
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            MainActivity.this.etPalavra = new EditText(MainActivity.this);
+            final Palavra p = MainActivity.this.dao.get(position);
+            MainActivity.this.etPalavra.setText(p.getConteudo());
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Editar Palavra");
+            builder.setMessage("Palavra");
+            builder.setIcon(R.mipmap.ic_launcher);
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Palavra nova = new Palavra(MainActivity.this.etPalavra.getText().toString());
+                    MainActivity.this.dao.update(p, nova);
+                    MainActivity.this.atualizaLista();
+                }
+            });
+            builder.setNegativeButton("Cancelar", null);
+            builder.setView(MainActivity.this.etPalavra);
+            builder.create().show();
+        }
+    }
+
+    private class ClickLongItemLista implements AdapterView.OnItemLongClickListener{
+        @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            final Palavra p = MainActivity.this.dao.get(position);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Excluir Palavra");
+            builder.setIcon(R.mipmap.ic_launcher);
+            builder.setMessage(String.format("Deseja excluir '%s'", p.getConteudo()));
+            builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    MainActivity.this.dao.delete(p);
+                    MainActivity.this.atualizaLista();
+                }
+            });
+            builder.setNegativeButton("Não", null);
+            builder.create().show();
+
+            return true;
         }
     }
 }

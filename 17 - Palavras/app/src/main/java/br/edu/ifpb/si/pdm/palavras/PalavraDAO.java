@@ -28,7 +28,7 @@ public class PalavraDAO {
     }
 
     public Palavra get(int index){
-        return null;
+        return this.get().get(index);
     }
 
     public List<Palavra> get(){
@@ -52,6 +52,23 @@ public class PalavraDAO {
     }
 
     public int size(){
-        return 0;
+        String[] colunas = {"codigo", "conteudo", "datahora"};
+        Cursor c = this.banco.query(BancoHelper.TABELA, colunas, null, null, null, null, null);
+        return c.getCount();
+    }
+
+    public void update(Palavra original, Palavra alterada){
+        ContentValues cv = new ContentValues();
+        cv.put("conteudo", alterada.getConteudo());
+        cv.put("datahora", alterada.getDataHoraLong());
+
+        String[] where = {Integer.toString(original.getId())};
+
+        this.banco.update(BancoHelper.TABELA, cv, "codigo = ?", where);
+    }
+
+    public void delete(Palavra p){
+        String[] where = {Integer.toString(p.getId())};
+        this.banco.delete(BancoHelper.TABELA, "codigo = ?", where);
     }
 }

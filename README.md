@@ -31,3 +31,5 @@
 \# | Data | Projeto | Conteúdo
 --- | --- | --- | ---
 17 | 22/07/2017 | Que Bom | Estrutura Projeto XCode
+18 | 24/07/2017 | Somador | Outlet e Action
+

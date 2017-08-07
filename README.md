@@ -32,5 +32,6 @@
 --- | --- | --- | ---
 17 | 22/07/2017 | Que Bom | Estrutura Projeto XCode
 18 | 24/07/2017 | Somador | Outlet e Action
-19 | 04/08/2017 | Pessoa| Swift e Class
+19 | 04/08/2017 | Pessoa | Swift e Class
+20 | 07/08/2017 | Janela | Ciclo de Vida da View e Navegação
 

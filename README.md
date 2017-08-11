@@ -46,7 +46,7 @@ Códigos [iOS](https://developer.apple.com/develop/) desenvolvidos em sala de au
 20 | 07/08/2017 | Janela | Ciclo de Vida da View e Navegação
 
 
-### **Especificação dos Projetos**
+## **Especificação dos Projetos**
 > - Android
 > - iOS
 > 

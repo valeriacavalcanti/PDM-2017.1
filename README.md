@@ -1,10 +1,16 @@
-# PDM 2017.1
+# **PDM 2017.1**
 
-- [IFPB Campus João Pessoa](http://www.ifpb.edu.br/campi/campi/joao-pessoa)
-- [CST em Sistemas para Internet](http://estudante.ifpb.edu.br/cursos/39)
-- [Programação para Dispositivos Móveis](http://pdm.valeriacavalcanti.com.br)
+#### <i class="icon-link"></i> **Sobre**
+- Instituição: [IFPB Campus João Pessoa](http://www.ifpb.edu.br/campi/campi/joao-pessoa)
+- Curso: [Sistemas para Internet](http://estudante.ifpb.edu.br/cursos/39)
+- Disciplina: [Programação para Dispositivos Móveis](http://pdm.valeriacavalcanti.com.br)
+- Profa.: [Valéria Cavalcanti](http://valeria.eti.br)
 
-## Android
+
+## **Android**
+Códigos [Android](https://developer.android.com/index.html) desenvolvidos em sala de aula.
+> - IDE: [Android Studio](https://developer.android.com/studio/index.html)
+> - Linguagem: [Java](http://www.oracle.com/technetwork/pt/java/javase/downloads/index.html)
 
 \# | Data | Projeto | Conteúdo
 --- | --- | --- | ---
@@ -26,7 +32,11 @@
 16 | 17/07/2017 | Palavra | Banco de Dados - Versão 2.0
 
 
-## iOS
+## **iOS**
+Códigos [iOS](https://developer.apple.com/develop/) desenvolvidos em sala de aula.
+> 
+> - IDE: [XCode](https://developer.apple.com/xcode/)
+> - Linguagem: [Swift](https://www.apple.com/br/swift/)
 
 \# | Data | Projeto | Conteúdo
 --- | --- | --- | ---
@@ -35,3 +45,8 @@
 19 | 04/08/2017 | Pessoa | Swift e Class
 20 | 07/08/2017 | Janela | Ciclo de Vida da View e Navegação
 
+
+### **Especificação dos Projetos**
+> - Android
+> - iOS
+> 

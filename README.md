@@ -47,6 +47,6 @@ Códigos [iOS](https://developer.apple.com/develop/) desenvolvidos em sala de au
 
 
 ## **Especificação dos Projetos**
-> - [Android] (https://github.com/valeriacavalcanti/PDM-2017.1/tree/master/Especifica%C3%A7%C3%A3o%20dos%20Projetos)
-> - [iOS] (https://github.com/valeriacavalcanti/PDM-2017.1/tree/master/Especifica%C3%A7%C3%A3o%20dos%20Projetos)
+> - [Android](https://github.com/valeriacavalcanti/PDM-2017.1/tree/master/Especifica%C3%A7%C3%A3o%20dos%20Projetos)
+> - [iOS](https://github.com/valeriacavalcanti/PDM-2017.1/tree/master/Especifica%C3%A7%C3%A3o%20dos%20Projetos)
 > 

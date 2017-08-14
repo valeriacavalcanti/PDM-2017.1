@@ -44,7 +44,7 @@ Códigos [iOS](https://developer.apple.com/develop/) desenvolvidos em sala de au
 18 | 24/07/2017 | Somador | Outlet e Action
 19 | 04/08/2017 | Pessoa | Swift e Class
 20 | 07/08/2017 | Janela | Ciclo de Vida da View e Navegação
-
+21 | 14/08/2017 | Viagem | TableViewController e NavigationController
 
 ## **Especificação dos Projetos**
 > - [Android](https://github.com/valeriacavalcanti/PDM-2017.1/tree/master/Especifica%C3%A7%C3%A3o%20dos%20Projetos)
